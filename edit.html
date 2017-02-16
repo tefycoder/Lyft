@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<title>Edit Profile</title>
+	</head>
+	<body>
+		<header>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4">
+						<a href="perfil.html"><h5>Cancel</h5></a>
+					</div>
+					<div class="col-xs-4 text-center"><h5>Edit profile</h5></div>
+					<div class="col-xs-4 text-right"><a href="perfil.html"><h5 id="done">Done</h5></a></div>
+				</div>
+			</div>
+		</header>
+		<div class="container-fluid mt-21">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="form-group">
+					    <label for="exampleInputFile">File input</label>
+					    <input type="file" id="inputFile">
+					    <img src="img/foto.jpg" class="fotoRect" id="fotoprev">
+					 </div>
+				</div>
+			</div>
+			<form>
+				<div class="edit-form row">
+					<div class="col-md-6 col-xs-6">
+						<div class="form-group">
+						    <label>NAME</label>
+						    <input id="name" type="text" class="form-control" placeholder="Name">
+						</div>
+					</div>
+					<div class="col-md-6 col-xs-6">
+						<div class="form-group">
+						    <label>LASTNAME</label>
+						    <input id="lastname" type="text" class="form-control" placeholder="Lastname">
+					  	</div>
+					</div>
+				  
+					<div class="col-md-12 col-xs-12">
+						<div class="form-group">
+						    <label>EMAIL</label>
+						    <input id="email" type="email" class="form-control" placeholder="Email">
+						  </div>
+					</div>				  
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>

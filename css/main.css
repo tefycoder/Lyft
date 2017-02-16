@@ -1,0 +1,260 @@
+.principal{
+	background-image: url("../img/fondo.jpg");
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+}
+.logo{
+	background-size: cover;
+    margin-top: 10%;
+    width: 90%;
+}
+.boton{
+	bottom: 10%;
+    color: black;
+    font-size: 20px;
+	position: absolute;
+	width: 40%;
+}
+.log{
+	background-color: transparent;
+	border-color: black;
+	left: 5%;	
+}
+.sing{
+	background-image: url("../img/btncolor.png");
+	background-size: cover;
+	right: 5%;
+}
+/*-------------FIN INDEX--------------------*/
+.f-sup{
+	position: relative;
+}
+.i-atras{
+	color: #bbb;
+	font-size: 25px;
+	left: 3%;
+	position: absolute;
+	margin-top: 3%;
+}
+.titulo{
+	font-size: 22px;
+	font-weight: bold;
+	margin: 3% 22%;
+}
+.borde-inf{
+	border-bottom: 1px solid #bbb;
+	margin: 0;
+}
+.margen-aa{
+	margin: 10px 0;
+}
+.bandera{
+	width: 20px;
+	height: 15px;
+	margin-right: 20%;
+}
+.botoncod{
+	border-right:1px solid transparent;
+}
+.no-focus{
+	border-left: none;
+	padding-left: 0px;
+	box-shadow: none;
+}
+.no-focus:focus {
+	outline: -webkit-focus-ring-color auto 0px;
+    outline-style: none;
+    box-shadow: none;
+    border-color: lightgrey;
+}
+.next{
+	background-color: #E71D36;
+	color: white;
+	width: 100%;
+}
+/*------------FIN SING UP--------------*/
+.tit2{
+	font-size: 18px;
+    font-weight: bold;
+    margin: 4% 22%;
+}
+.mgn-vrf-d{
+	margin-top: 100px;
+	margin-bottom: 10px;
+}
+.clet{
+	width: 30px;
+	height: 30px;
+	padding-top: 10px;
+}
+.cnum{
+	width: 30px;
+	height: 30px;
+	border: none;
+	border-bottom: 1px solid #bbb;
+	margin: 5px 0;
+	text-align: center;
+}
+/*---------FIN VERIFY----------------------*/
+.two-fields input{
+	width: 50% !important;
+}
+.sn-mrg{
+	margin: 0;
+}
+.icn-dats{
+	color: black;
+	border:none;
+	background-color:white;
+}
+.ipt-error{
+	border: 1px solid red;
+	box-shadow: 0px 0px 20px 0px rgba(237,133,124,1);
+}
+/*--------FIN DATOS-------------------------*/
+.tamanoMapa{
+	width: 100%;
+	height: 100vh;
+}
+.pack-icns{
+	width: 100%;
+}
+.circulo{
+	border-radius: 50%;
+	background-color: white;
+	border: 1px solid gray;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	z-index:100;
+	top: 10px;
+}
+.izq{
+	left: 10px
+}
+.dere{
+	right: 10px;
+}
+.sn-borde{
+	border:none;
+	width: 100%;
+	text-align: center;
+}
+.icons{
+	font-size: 26px;
+	color: black;
+	margin: 23%;
+}
+.logo2{
+	width: 20%;
+	height: 50px;
+	position: absolute;
+	z-index: 100;
+	top: 10px;
+	margin: 0 40%;
+}
+.pack-btns{
+	position: absolute;
+	z-index: 100;
+	bottom: 0;
+	margin: 2% 3%;
+	width: 95%;
+}
+.rect{
+	border: 1px solid #bbb;
+	border-radius: 10px;
+	margin-bottom: 2%;
+	text-align: center;
+	width: 100%;
+}
+.dir{
+	background-color: white;
+	padding: 2% 10%;
+}
+.pic{
+	padding: 5%;
+	background-image: url("../img/btncolor.png");
+	background-size: cover;
+	font-size: 20px;
+	color: white;
+}
+/*-------fin vista mapa-------*/
+.semiperfil{
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.5);
+}
+.ocultar{
+	display: none;
+}
+.fondoBlanco{
+	background-color: white;
+	position: absolute;
+	height: 100vh;
+	width: 70%;
+}
+.circuloFoto{
+	border-radius: 50%;
+	border: 1px solid #bbb;
+	padding: 1%;
+	width: 50%;
+}
+.margenes{
+	margin: 3% 0;
+}
+.icn-mgd{
+	margin-left: 5%;
+}
+.margenfrase{
+	margin-left: 5%;
+	display: inline-block;
+}
+/*-------FIN SEMI PERFIL-------*/
+.fondoFoto{
+	position: relative;
+	width: 100%;
+	height: 50vh;
+}
+.puntos{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+.btnedit{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.fecha{
+	border-radius: 5px;
+	background-color: #F3F5F5;
+	margin: 0 5%;
+	padding: 2% 0;
+}
+.icns-pfl{
+	color: black;
+}
+.margenlados{
+	margin: 5%;
+}
+.texto{
+	margin-left: 2%;
+}
+/*--------FIN PERFIL--------*/
+.rect-foto{
+	border: 1px solid #bbb;
+	margin: 2% 10%;
+	width: 80%;
+}
+
+.mt-21 {
+	margin-top: 21px;
+}
+.fotoRect{
+	width: 30%;
+	height: 80px;
+	margin: 2% 0;
+}
