@@ -4,8 +4,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.css">-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/sign-up.css">
+		
+
+		<link rel="stylesheet" type="text/css" href="https://github.com/downloads/lafeber/world-flags-sprite/flags16.css" />
+  		<link rel="stylesheet" type="text/css" href="https://github.com/downloads/lafeber/world-flags-sprite/flags32.css" />
 		<title>Lyft - Sign up</title>
 	</head>
 	<body>
@@ -16,7 +22,7 @@
 					<h1 class="titulo">Sign up</h1>
 				</div>
 				<div class="row borde-inf">
-					<div class="col-xs-12 text-center">
+					<div class="col-xs-12 col-md-12 text-center">
 						<p>Join now for free ride credit</p>
 					</div>
 				</div>
@@ -26,17 +32,50 @@
 			<div class="container-fluid">
 				<div class="input-group margen-aa">
       				<div class="input-group-btn">
-        				<button type="button" class="btn btn-default"><img src="img/peru.png" class="bandera"><span class="caret"></span></button>
-        				<button type="button" class="btn btn-default botoncod">+51</button>
+        				<button type="button" class="btn btn2 btn-default dropdown-toggle f16" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a id="banderaf" class="flag pe"></a><span class="caret"></span></button>
+        				<div class="dropdown-menu f16" aria-labelledby="dropdownMenuButton">
+						    
+						</div>
+        				<button type="button" class="btn btn2 btn-default botoncod">+51</button>
       				</div>
       				<input type="tel" class="form-control no-focus" placeholder="123456789" id="numeros" maxlength="9">
     			</div>
     			<p class="text-center">We'll send a text to verify your phone</p>
     			<a class="btn next" id="sgt1">Next</a>
 			</div>
+			
 		</section>
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/sweetalert-dev.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript">
+	        $.getJSON( "countries.json", function( data ) {
+	         // console.log(data.length);
+
+	          //iterador para imprimir las banderitas
+	          for (var i = 0; i< data.length; i++) {
+	            //console.log(data[i].tld[0]);
+	            if(data[i].tld[0]!=null && data[i].callingCode[0]!=null){ //pregunto si la data es correcta
+	              //si no son nulos imrpimo las banderitas en el div "dropdown-menu"
+	              $( ".dropdown-menu" ).append( " <a class='dropdown-item' id-code='"+data[i].callingCode[0]+"' id-bd='flag "+data[i].tld[0].replace('.', '')+"'><p class='flag "+data[i].tld[0].replace('.', '')+"'> </p></a>" );
+	            }
+	          };	   
+	          //aca solo detecto el evento click 
+	          $( ".dropdown-item" ).click(function() {
+	          	//aca reemplazo html con los datos del atributo
+	          	$(".botoncod").html("+"+$(this).attr("id-code"));
+	          	$("#banderaf").attr('class', $(this).attr("id-bd"));
+	          	
+			  });       
+
+	          
+	          
+	        });
+	      </script>
+
+	      
 	</body>
 </html>

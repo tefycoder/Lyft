@@ -62,9 +62,30 @@
 			</div>
 		</div>
 		<div id="map"></div>
+
+
+		<!-- -->
+		<h2>Route <strong id="km"></strong></h2>
+		<div id="gmap-route"></div>
+		<div id="route"></div>
+		<!-- -->
 		<script type="text/javascript" src="js/sweetalert-dev.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3f_itecFhNIkNeSsWovplQm_0bY5b6LI" async defer></script>
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript">
+			new Maplace({
+			    locations: LocsD,
+			    map_div: '#gmap-route',
+			    generate_controls: false,
+			    show_markers: false,
+			    type: 'directions',
+			    draggable: true,
+			    directions_panel: '#route',
+			    afterRoute: function(distance) {
+			        $('#km').text(': '+(distance/1000)+'km');
+			    }
+			}).Load();
+		</script>
 	</body>
 </html
