@@ -1,4 +1,4 @@
-[
+var countries = [
 	{
 		"name": {
 			"common": "Aruba",
@@ -12044,4 +12044,4 @@
 		"borders": ["BWA", "MOZ", "ZAF", "ZMB"],
 		"area": 390757
 	}
-]
+];

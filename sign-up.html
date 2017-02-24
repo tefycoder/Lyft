@@ -50,21 +50,22 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/sweetalert-dev.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="countries.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
 		<script type="text/javascript">
-	        $.getJSON( "countries.json", function( data ) {
+	        //$.getJSON( "countries.json", function( data ) {
 	         // console.log(data.length);
 
 	          //iterador para imprimir las banderitas
-	          for (var i = 0; i< data.length; i++) {
+	          for (var i = 0; i< countries.length; i++) {
 	            //console.log(data[i].tld[0]);
-	            if(data[i].tld[0]!=null && data[i].callingCode[0]!=null){ //pregunto si la data es correcta
+	            if(countries[i].tld[0]!=null && countries[i].callingCode[0]!=null){ //pregunto si la countries es correcta
 	              //si no son nulos imrpimo las banderitas en el div "dropdown-menu"
-	              $( ".dropdown-menu" ).append( " <a class='dropdown-item' id-code='"+data[i].callingCode[0]+"' id-bd='flag "+data[i].tld[0].replace('.', '')+"'><p class='flag "+data[i].tld[0].replace('.', '')+"'> </p></a>" );
+	              $( ".dropdown-menu" ).append( " <a class='dropdown-item' id-code='"+countries[i].callingCode[0]+"' id-bd='flag "+countries[i].tld[0].replace('.', '')+"'><p class='flag "+countries[i].tld[0].replace('.', '')+"'> </p></a>" );
 	            }
 	          };	   
 	          //aca solo detecto el evento click 
-	          $( ".dropdown-item" ).click(function() {
+	          $( ".dropdown-item" ).click(function() {	
 	          	//aca reemplazo html con los datos del atributo
 	          	$(".botoncod").html("+"+$(this).attr("id-code"));
 	          	$("#banderaf").attr('class', $(this).attr("id-bd"));
@@ -73,7 +74,7 @@
 
 	          
 	          
-	        });
+	       // });
 	      </script>
 
 	      
