@@ -12,6 +12,7 @@ var cargaPag = function(){
 			navigator.geolocation.getCurrentPosition(todoBien, hayError);
 		}
 	}
+
 	$("#contacto").click(aparecePerfil);
 	$("#mitad").click(apareceMap);
 	$(".nombreUs").text(localStorage.getItem("nombre") +" "+localStorage.getItem("apellido"));
