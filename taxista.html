@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<title>Lyft - Profile</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<img src="img/foto.jpg" class="fondoFoto" id="fotoGuar">
+				<a class="glyphicon glyphicon-option-vertical puntos" href="map.html"></a>
+				<a href="edit.html" class="btn btnedit">Edit Profile</a>
+			</div>
+			<div class="row">
+				<h3 class="text-center nombreUs">Username</h3>
+			</div>
+			<div class="row">
+				<div class="text-center price">
+					<p class="fecha"></p>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript">
+			 $( document ).ready(function() {
+			 	var price = localStorage.getItem("Price");
+	      		$('.price').html("<p class='fecha'>$ "+price+"</p>");
+		      });
+		</script>
+	</body>
+</html>

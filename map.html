@@ -4,7 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/primer_mapa.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<title>Lyft - Home</title>
 	</head>
@@ -17,10 +18,25 @@
 			<a class="glyphicon glyphicon-gift icons"></a>
 		</div>
 		<div class="pack-btns">
+			
+			<div class="btn-group dropup">
+			  <button type="button" class="btn btn-secondary">Seleccione un auto</button>
+			  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    <span class="sr-only">Seleccione un auto</span>
+			  </button>
+			  <div class="dropdown-menu">
+
+			    <a class="dropdown-item" data-des="2300 Harrison  St Pickup Location car 1" href="#">2300 Harrison  St Pickup Location car 1</a>
+			    <a class="dropdown-item" data-des="2300 Harrison  St Pickup Location car 2" href="#">2300 Harrison  St Pickup Location car 2</a>
+			    <a class="dropdown-item" data-des="2300 Harrison  St Pickup Location car 3" href="#">2300 Harrison  St Pickup Location car 3</a>
+
+			  </div>
+			</div>
+
 			<div class="rect dir">
 				<input type="text" id="dire" class="sn-borde">
 			</div>
-			<div class="rect pic" id="pick">Set Pickup</div>
+			<div class="rect pic" id="pick"><a href="drawmap.html">Set Pickup</a></div>
 		</div>
 		<div class="semiperfil ocultar" id="mitad">
 			<div class="fondoBlanco">
@@ -65,27 +81,27 @@
 
 
 		<!-- -->
-		<h2>Route <strong id="km"></strong></h2>
+		<!--<h2>Route <strong id="km"></strong></h2>-->
 		<div id="gmap-route"></div>
 		<div id="route"></div>
 		<!-- -->
 		<script type="text/javascript" src="js/sweetalert-dev.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3f_itecFhNIkNeSsWovplQm_0bY5b6LI" async defer></script>
-		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/app.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		
 		<script type="text/javascript">
-			new Maplace({
-			    locations: LocsD,
-			    map_div: '#gmap-route',
-			    generate_controls: false,
-			    show_markers: false,
-			    type: 'directions',
-			    draggable: true,
-			    directions_panel: '#route',
-			    afterRoute: function(distance) {
-			        $('#km').text(': '+(distance/1000)+'km');
-			    }
-			}).Load();
+			 $( ".dropdown-item" ).click(function() {	
+	          	//aca reemplazo html con los datos del atributo
+	          	var descr = $(this).attr("data-des");
+	          	localStorage.setItem("Des_car", descr);
+	          	
+			  });       
+
+			
 		</script>
 	</body>
 </html
