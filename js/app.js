@@ -37,6 +37,11 @@ var cargaPag = function(){
 }
 var entra = true;
 var conta = 0; 
+
+
+var lat;
+var lon; 
+
 $(document).ready(cargaPag);
 
 var validar = function(e){
@@ -144,9 +149,13 @@ var valDatos = function(){
 	}
 }
 var todoBien = function(pos){
-	var lat = pos.coords.latitude;
-	var lon = pos.coords.longitude; 
+	lat = pos.coords.latitude;
+	lon = pos.coords.longitude; 
 	var latlon = new google.maps.LatLng(lat, lon);
+	var latlon_car1 = new google.maps.LatLng(lat-0.009, lon-0.002);
+	var latlon_car2 = new google.maps.LatLng(lat+0.008, lon+0.007);
+	var latlon_car3 = new google.maps.LatLng(lat-0.002, lon+0.004);
+
 	$("#map").addClass("tamanoMapa");
 
 	var misOpciones = {
@@ -159,16 +168,45 @@ var todoBien = function(pos){
 	};
 
 	var mapa = new google.maps.Map(document.getElementById("map"), misOpciones);
+	
 
+      
 	var marcador = new google.maps.Marker({
 		position: latlon,
 		map: mapa,
 		title: "You are here"
 	});
 
+	var marcador = new google.maps.Marker({
+		position: latlon_car1,
+		map: mapa,
+		icon: 'http://www.rainmotorenworks.com/frontend/images/icon.png',
+		title: "car 1"
+	});
+
+	var marcador = new google.maps.Marker({
+		position: latlon_car2,
+		map: mapa,
+		icon: 'http://www.rainmotorenworks.com/frontend/images/icon.png',
+		title: "car 2"
+	});
+
+	var marcador = new google.maps.Marker({
+		position: latlon_car3,
+		map: mapa,
+		icon: 'http://www.rainmotorenworks.com/frontend/images/icon.png',
+		title: "car 3"
+	});
+
+
 	var geocoder = new google.maps.Geocoder();
 	geocoder.geocode({"latLng":latlon},direcActual);
 }
+
+
+
+
+
 var direcActual = function(resultado, estado){
 	if (estado == google.maps.GeocoderStatus.OK){
 		if (resultado[0]){
